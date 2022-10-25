@@ -60,7 +60,7 @@ class Query(graphene.ObjectType):
         # Querying a list
         return Book.objects.all()
 
-    def resolve_books_by_author(root, info, **kwargs):            # to filter books by author
+    def resolve_books_by_author(root, info, **kwargs):           # to filter books by author
         author = kwargs.get('author')
         if author is not None:
             return Book.objects.filter(author=author)
@@ -70,7 +70,7 @@ class Query(graphene.ObjectType):
         # Querying a list
         return Category.objects.all()
     
-    def resolve_category(root, info, **kwargs):                  #to retrieve single category through query 
+    def resolve_category(root, info, **kwargs):                  # to retrieve single category through query 
         id = kwargs.get('id')
         if id is not None:
             return Category.objects.get(id=id)
